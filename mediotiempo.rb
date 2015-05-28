@@ -7,8 +7,8 @@ class Mediotiempo
     games = []
     elements.each do |ticker|
       games << {
-        local_name: ticker.css('td')[1].text.strip.encode("iso-8859-1").force_encoding("utf-8"),
-        visitor_name: ticker.css('td')[7].text.strip.encode("iso-8859-1").force_encoding("utf-8"),
+        local_name: ticker.css('td')[1].text.strip,
+        visitor_name: ticker.css('td')[7].text.strip,
         local_goals: ticker.css('td')[2].css('td.score1').text.strip,
         visitor_goals: ticker.css('td')[2].css('td.score2').text.strip,
         time: ticker.css('td')[2].css('tr')[1].text.strip,
